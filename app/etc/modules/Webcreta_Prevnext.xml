@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Webcreta_Prevnext>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Webcreta_Prevnext>
+    </modules>
+</config> 

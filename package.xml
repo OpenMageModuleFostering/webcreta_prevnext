@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+    <name>Webcreta_Prevnext</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This extension adds a Previous and Next button to your Magento Admin Panel. It allows jump from one product to another and same for Orders ans coustomers in backend.</summary>
+    <description>There are multiple Orders,Products and Customers in your Magento Admin Panel. While editing you need to go back to overview page and&#xD;
+detail page. With this extension you don't have to go back on overview page and pick the another item. You just have to click on Previous Next button for easily navigate to edit Orders, Products and Customers on detail page.</description>
+    <notes>Fixed minor bugs.</notes>
+    <authors><author><name>Webcreta</name><user>Webcreta</user><email>webcreta@gmail.com</email></author></authors>
+    <date>2016-12-28</date>
+    <time>06:41:55</time>
+    <contents><target name="magelocal"><dir name="Webcreta"><dir name="Prevnext"><dir name="Helper"><file name="Data.php" hash="a88436cd96744edb8c4e73ec05915429"/></dir><dir name="Model"><file name="Prevnext.php" hash="2899444065216883f912b6798d220ad7"/></dir><dir name="etc"><file name="config.xml" hash="b0b5ecb2ca3ef628e78bec63d5cd0a89"/><file name="system.xml" hash="f665fd4ee8e4b083dabff112ee122f4e"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Webcreta_Prevnext.xml" hash="e2f52bf816f5fc0f413eaeab812188e9"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>7.0.0</max></php></required></dependencies>
+</package>

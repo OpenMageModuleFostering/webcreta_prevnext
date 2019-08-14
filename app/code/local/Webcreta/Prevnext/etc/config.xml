@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Webcreta_Prevnext>
+            <version>0.1.0</version>
+		</Webcreta_Prevnext>
+	</modules>
+    <frontend>
+        <routers>
+            <prevnext>
+                <use>standard</use>
+                <args>
+                    <module>Webcreta_Prevnext</module>
+                    <frontName>prevnext</frontName>
+				</args>
+			</prevnext>
+		</routers>
+        <layout>
+            <updates>
+                <prevnext>
+                    <file>prevnext.xml</file>
+				</prevnext>
+			</updates>
+		</layout>
+	</frontend>
+    <admin>
+        <routers>
+			<prevnext>
+				<use>admin</use>
+				<args>
+					<module>Webcreta_Prevnext</module>
+					<frontName>prevnext</frontName>
+				</args>
+			</prevnext>
+		</routers>
+	</admin>
+    <adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<webcreta>
+											<title>webcreta - All</title>
+										</webcreta>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<prevnext>
+					<file>prevnext.xml</file>
+				</prevnext>
+			</updates>
+		</layout>
+	</adminhtml>   
+    <global>
+		<events>
+            <adminhtml_widget_container_html_before><!-- identifier of the event we want to catch -->
+                <observers>
+                    <prevnext><!-- identifier of the event handler -->
+                        <class>Webcreta_Prevnext_Model_Prevnext</class><!-- observers class alias -->
+                        <type>model</type><!-- class method call type; valid are model, object and singleton -->
+                        <method>adminhtmlWidgetContainerHtmlBefore</method><!-- observer's method to be called -->
+                        <args></args> <!-- additional arguments passed to observer -->
+					</prevnext>
+				</observers>
+			</adminhtml_widget_container_html_before>
+			<adminhtml_widget_container_html_before><!-- identifier of the event we want to catch -->
+                <observers>
+                    <custprevnext><!-- identifier of the event handler -->
+                        <class>Webcreta_Prevnext_Model_Prevnext</class><!-- observers class alias -->
+                        <type>model</type><!-- class method call type; valid are model, object and singleton -->
+                        <method>adminhtmlWidgetContainerHtmlBeforecustomer</method><!-- observer's method to be called -->
+                        <args></args> <!-- additional arguments passed to observer -->
+					</custprevnext>
+				</observers>
+			</adminhtml_widget_container_html_before>
+			<controller_action_layout_render_before_adminhtml_catalog_product_edit>
+				<observers>
+					<proprevnext>
+						<class>Webcreta_Prevnext_Model_Prevnext</class>
+						<method>adminhtmlWidgetContainerHtmlBeforeproduct</method>
+					</proprevnext>
+				</observers>
+			</controller_action_layout_render_before_adminhtml_catalog_product_edit>
+		</events>
+       
+		<helpers>
+            <prevnext>
+                <class>Webcreta_Prevnext_Helper</class>
+            </prevnext>
+        </helpers>
+	</global>
+</config>				
